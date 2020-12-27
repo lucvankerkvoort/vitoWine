@@ -1,0 +1,16 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 50px 0px;
+  margin: auto;
+  // min-height: fit-content;
+  // height: 520vh;
+}

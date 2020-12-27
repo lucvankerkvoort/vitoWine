@@ -1,0 +1,37 @@
+.cart-item {
+  background: white;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 10px;
+  // border: 2px solid black;
+  width: 80%;
+  height: fit-content;
+  .container {
+    display: flex;
+    border-radius: 24px;
+    width: 50%;
+    margin: 20px 0px;
+    .cart-item-text {
+      margin: 0px 50px;
+    }
+    .picture {
+      div {
+        width: 200px;
+        height: 150px;
+        // border: 2px solid black;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    .price {
+      //   border: 2px solid black;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
