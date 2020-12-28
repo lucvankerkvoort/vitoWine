@@ -1,30 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-// import { store } from "../../Services/Store";
 import { Link } from "react-router-dom";
-// import images from "../../Images/images";
+import images from "../../Images/images";
+import { DbContext } from "../../Services/Context/Db";
 
-const Items = ({ title, price, pics, star, description }) => {
+const Items = ({ title, price, pics, star, description, id }) => {
   const [starArray, setStarArray] = useState([]);
-  // const userData = useContext(store);
-  // const { dispatch } = userData;
-  const props = {
-    title,
-    price,
-    pics,
-    description,
-    starArray,
-    star,
-  };
 
+  const { getOne } = useContext(DbContext);
   useEffect(() => {
     let flatStarRate = Math.round(star);
     console.log(flatStarRate);
     const starArray = [];
     for (let i = 0; i < 5; i++) {
       if (flatStarRate > i) {
-        // starArray.push(images.starFilled);
+        starArray.push(images.starFilled);
       } else {
-        // starArray.push(images.starEmpty);
+        starArray.push(images.starEmpty);
       }
     }
 
@@ -35,8 +26,7 @@ const Items = ({ title, price, pics, star, description }) => {
       <Link
         style={{ textDecoration: "none", color: "black" }}
         onClick={() => {
-          // dispatch({ type: "current", payload: props });
-          localStorage.setItem("current", JSON.stringify(props));
+          getOne({ type: "wine", id });
         }}
         to="/spec"
       >

@@ -7,13 +7,16 @@ import Cart from "./Pages/Cart";
 import Shop from "./Pages/Shop";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/footer";
-import { DbContext, DbProvider } from "./Services/Context/Db";
+import { DbContext } from "./Services/Context/Db";
 import "./Styles/import.scss";
+import Specification from "./Pages/Specification";
 
 const App = () => {
   const user = useContext(DbContext);
   useEffect(async () => {
-    user.getAll();
+    user.getAll("wine");
+    // user.getAll("article");
+    // user.getAll("deal");
   }, []);
   console.log(user);
   return (
@@ -23,6 +26,7 @@ const App = () => {
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route path="/shop/:type" render={(props) => <Shop {...props} />} />
         <Route path="/cart" render={(props) => <Cart {...props} />} />
+        <Route path="/spec" render={(props) => <Specification {...props} />} />
         <Footer />
       </BrowserRouter>
     </div>

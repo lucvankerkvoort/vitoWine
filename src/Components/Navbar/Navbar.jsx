@@ -17,10 +17,9 @@ const Navbar = () => {
         <div className="navbar-header">
           <div className="logo">
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-              <img src={image.Logo} alt="logo" height="150px" />
+              <img src={image.Logo} alt="logo" height="80px" />
             </Link>
           </div>
-          <h6>Good D-Vine</h6>
           <div className="navbar-assets">
             <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
               <div className="cart">
